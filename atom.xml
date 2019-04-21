@@ -3,11 +3,11 @@
   <title>jxzの博客</title>
   
   <subtitle>前路漫漫，当克己，当慎独。</subtitle>
-  <link href="/myblog/atom.xml" rel="self"/>
+  <link href="/atom.xml" rel="self"/>
   
-  <link href="https://jxz2016.gitee.io/myblog/"/>
+  <link href="http://yoursite.com/"/>
   <updated>2019-04-21T05:41:45.888Z</updated>
-  <id>https://jxz2016.gitee.io/myblog/</id>
+  <id>http://yoursite.com/</id>
   
   <author>
     <name>JixuZhao</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>我的第一篇博客</title>
-    <link href="https://jxz2016.gitee.io/myblog/2019/04/21/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/"/>
-    <id>https://jxz2016.gitee.io/myblog/2019/04/21/我的第一篇博客/</id>
+    <link href="http://yoursite.com/2019/04/21/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/"/>
+    <id>http://yoursite.com/2019/04/21/我的第一篇博客/</id>
     <published>2019-04-21T05:41:45.000Z</published>
     <updated>2019-04-21T05:41:45.888Z</updated>
     
@@ -32,8 +32,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="https://jxz2016.gitee.io/myblog/2019/04/21/hello-world/"/>
-    <id>https://jxz2016.gitee.io/myblog/2019/04/21/hello-world/</id>
+    <link href="http://yoursite.com/2019/04/21/hello-world/"/>
+    <id>http://yoursite.com/2019/04/21/hello-world/</id>
     <published>2019-04-21T02:17:59.846Z</published>
     <updated>2019-04-21T02:17:59.846Z</updated>
     
