@@ -37,7 +37,7 @@
   #}</span>
   {% endif %}
 </div>
-<!--
+
 {% if theme.footer.powered.enable %}
   <div class="powered-by">{#
   #}{{ __('footer.powered', next_url('https://hexo.io', 'Hexo', {class: 'theme-link'})) }}{#
@@ -61,14 +61,15 @@
   #}{{ theme.footer.custom_text }}{#
 #}</div>
 {% endif %}
--->
+<!--
 <div class="powered-by">
 <i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
   本站访客数:<span id="busuanzi_value_site_uv"></span>
 </span>
 </div>
-<span class="post-meta-divider">|</span>|
+<span class="post-meta-divider">|</span>
 <div class="theme-info">
   <div class="powered-by"></div>
   <span class="post-count">博客全站共{{ totalcount(site) }}字</span>
 </div>
+-->

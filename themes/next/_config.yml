@@ -66,13 +66,13 @@ footer:
 
   powered:
     # Hexo link (Powered by Hexo).
-    enable: true
+    enable: false
     # Version info of Hexo after Hexo link (vX.X.X).
-    version: true
+    version: flase
 
   theme:
     # Theme & scheme info link (Theme - NexT.scheme).
-    enable: true
+    enable: false
     # Version info of NexT after scheme info (vX.X.X).
     version: true
 
@@ -165,7 +165,7 @@ menu:
   #schedule: /schedule/ || calendar
   #sitemap: /sitemap.xml || sitemap
   #commonweal: /404/ || heartbeat
-  
+
 
 # Enable / Disable menu icons / item badges.
 menu_settings:
@@ -201,6 +201,7 @@ social:
   GitHub: https://github.com/JXZ201606 || github
   E-Mail: jxz201606@163.com || envelope
   Weibo: https://weibo.com/jxz2016 || weibo
+  QQ: 977946496 || qq
   #Google: https://plus.google.com/yourname || google
   #Twitter: https://twitter.com/yourname || twitter
   #FB Page: https://www.facebook.com/yourname || facebook
@@ -283,9 +284,9 @@ sidebar:
 back2top:
   enable: true
   # Back to top in sidebar.
-  sidebar: false
+  sidebar: true
   # Scroll percent label in b2t button.
-  scrollpercent: false
+  scrollpercent: true
 
 # A button to open designated chat widget in sidebar.
 # Firstly, you need enable the chat service you want to activate its sidebar button.
@@ -318,9 +319,9 @@ save_scroll: false
 excerpt_description: true
 
 # Automatically Excerpt (Not recommend).
-# Use <!-- more --> in the post to control excerpt accurately.
+# Use <!-- more --> in the post to control excerpt accurately.阅读全文，150字开始
 auto_excerpt:
-  enable: false
+  enable: true
   length: 150
 
 # Read more button
@@ -836,7 +837,7 @@ firestore:
 busuanzi_count:
   enable: true
   total_visitors: true
-  total_visitors_icon: user 
+  total_visitors_icon: user
   total_views: true
   total_views_icon: eye
   post_views: true
