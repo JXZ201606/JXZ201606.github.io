@@ -1,36 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search> 
-  
-  
-    
-    <entry>
-      <title>我的第一篇博客</title>
-      <link href="/2019/04/21/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/"/>
-      <url>/2019/04/21/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
-      
-        <content type="html"><![CDATA[<h1 id="第一篇博客"><a href="#第一篇博客" class="headerlink" title="第一篇博客"></a>第一篇博客</h1><p>  捣鼓了一天博客，因为不太懂前端的一些知识，所以捣鼓的并不是很顺利。所幸网上的教程还比较多，现在勉强有个博客的样子。现在博客这个主题优化的还不是很好，网上看到了很多优化非常漂亮的模板，以后会模仿下，希望以后能够坚持写下去。</p>]]></content>
-      
-      
+<search>
+  <entry>
+    <title><![CDATA[markdown的基本语法]]></title>
+    <url>%2F2019%2F04%2F23%2Fmarkdown%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[MarkDown 的基本语法参考：https://www.jianshu.com/p/191d1e21f7ed 标题在想要设置为标题的文字前面加#来表示一个#是一级标题，二个#是二级标题，以此类推。支持六级标题。 注：标准语法一般在#后跟个空格再写文字。 示例： 效果如下： 这是一级标题这是二级标题这是三级标题这是四级标题这是五级标题这是六级标题]]></content>
       <categories>
-          
-          <category> 搭建博客 </category>
-          
+        <category>markdown</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> blog </tag>
-            
-            <tag> nodejs </tag>
-            
-            <tag> hexo </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-  
-  
+      <tags>
+        <tag>markdown</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[我的第一篇博客]]></title>
+    <url>%2F2019%2F04%2F21%2F%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%2F</url>
+    <content type="text"><![CDATA[第一篇博客 捣鼓了一天博客，因为不太懂前端的一些知识，所以捣鼓的并不是很顺利。所幸网上的教程还比较多，现在勉强有个博客的样子。现在博客这个主题优化的还不是很好，网上看到了很多优化非常漂亮的模板，以后会模仿下，希望以后能够坚持写下去。]]></content>
+      <categories>
+        <category>搭建博客</category>
+      </categories>
+      <tags>
+        <tag>blog</tag>
+        <tag>nodejs</tag>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
 </search>
