@@ -121,7 +121,7 @@
 <meta property="og:image" content="https://cdn.liaoxuefeng.com/cdn/files/attachments/0013848606651673ff1c83932d249118bf8fd5c58c15ca2000/0">
 <meta property="og:image" content="http://yoursite.com/images/git1.png">
 <meta property="og:image" content="https://cdn.liaoxuefeng.com/cdn/files/attachments/001384907073134ef6feff559cf4ce3a2c5c588d2831c0a000/0">
-<meta property="og:updated_time" content="2019-04-23T07:51:34.038Z">
+<meta property="og:updated_time" content="2019-04-23T08:01:04.387Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git的复习">
 <meta name="twitter:description" content="好早之前学习过git，有些命令不怎么用，在这里做一个复习，也做个记录。 推荐查看学习廖雪峰的git教程https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000 git的简介Git是什么？ Git是目前世界上最先进的分布式版本控制系统（没有之一）。 Git有什么特点？简单来说就是：高端大气上">
@@ -437,7 +437,7 @@
                 
               
 
-              <time title="创建时间：2019-04-23 14:43:43 / 修改时间：15:51:34" itemprop="dateCreated datePublished" datetime="2019-04-23T14:43:43+08:00">2019-04-23</time>
+              <time title="创建时间：2019-04-23 14:43:43 / 修改时间：16:01:04" itemprop="dateCreated datePublished" datetime="2019-04-23T14:43:43+08:00">2019-04-23</time>
             
 
             
@@ -524,10 +524,17 @@
 <p>因为Git是分布式版本控制系统，所以，每个机器都必须自报家门：你的名字和Email地址。你也许会担心，如果有人故意冒充别人怎么办？这个不必担心，首先我们相信大家都是善良无知的群众，其次，真的有冒充的也是有办法可查的。</p>
 <p>注意<font color="#FF0000"> <strong><em>git config</em></strong></font>命令的<font color="#FF0000"><strong><em>–global</em></strong></font>参数，用了这个参数，表示你这台机器上所有的Git仓库都会使用这个配置，当然也可以对某个仓库指定不同的用户名和Email地址。</p>
 <h2 id="创建版本库"><a href="#创建版本库" class="headerlink" title="创建版本库"></a>创建版本库</h2><p>什么是版本库呢？版本库又名仓库，英文名<strong>repository</strong>，你可以简单理解成一个目录，这个目录里面的所有文件都可以被Git管理起来，每个文件的修改、删除，Git都能跟踪，以便任何时刻都可以追踪历史，或者在将来某个时刻可以“还原”。</p>
-<p>所以，创建一个版本库非常简单，首先，选择一个合适的地方，创建一个空目录：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir learngit</span><br><span class="line">$ cd learngit</span><br><span class="line">$ pwd</span><br><span class="line">/Users/michael/learngit</span><br></pre></td></tr></table></figure></p>
+<h3 id="所以，创建一个版本库非常简单，首先，选择一个合适的地方，创建一个空目录："><a href="#所以，创建一个版本库非常简单，首先，选择一个合适的地方，创建一个空目录：" class="headerlink" title="所以，创建一个版本库非常简单，首先，选择一个合适的地方，创建一个空目录："></a>所以，创建一个版本库非常简单，首先，选择一个合适的地方，创建一个空目录：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir learngit</span><br><span class="line">$ cd learngit</span><br><span class="line">$ pwd</span><br><span class="line">/Users/michael/learngit</span><br></pre></td></tr></table></figure>
 <font color="#FF0000">pwd</font>命令用于显示当前目录。在我的Mac上，这个仓库位于/Users/michael/learngit。<br><br> <font color="#FF0000">如果你使用Windows系统，为了避免遇到各种莫名其妙的问题，请确保目录名（包括父目录）不包含中文</font>
 
-<p>第二步，通过git init命令把这个目录变成Git可以管理的仓库：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git init</span><br><span class="line">Initialized empty Git repository in /Users/michael/learngit/.git/</span><br></pre></td></tr></table></figure></p>
+<h3 id="第二步，通过git-init命令把这个目录变成Git可以管理的仓库："><a href="#第二步，通过git-init命令把这个目录变成Git可以管理的仓库：" class="headerlink" title="第二步，通过git init命令把这个目录变成Git可以管理的仓库："></a>第二步，通过git init命令把这个目录变成Git可以管理的仓库：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git init</span><br><span class="line">Initialized empty Git repository in /Users/michael/learngit/.git/</span><br></pre></td></tr></table></figure>
+<p>瞬间Git就把仓库建好了，而且告诉你是一个空的仓库（empty Git repository），细心的读者可以发现当前目录下多了一个<font color="#FF0000">.git</font>的目录，这个目录是Git来跟踪管理版本库的，没事千万不要手动修改这个目录里面的文件，不然改乱了，就把Git仓库给破坏了。</p>
+<h3 id="把文件添加到版本库"><a href="#把文件添加到版本库" class="headerlink" title="把文件添加到版本库"></a>把文件添加到版本库</h3><h4 id="用命令git-add告诉Git，把文件添加到仓库："><a href="#用命令git-add告诉Git，把文件添加到仓库：" class="headerlink" title="用命令git add告诉Git，把文件添加到仓库："></a>用命令git add告诉Git，把文件添加到仓库：</h4><p><code>$ git add readme.txt</code></p>
+<h4 id="用命令git-commit告诉Git，把文件提交到仓库"><a href="#用命令git-commit告诉Git，把文件提交到仓库" class="headerlink" title="用命令git commit告诉Git，把文件提交到仓库:"></a>用命令git commit告诉Git，把文件提交到仓库:</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git commit -m &quot;wrote a readme file&quot;</span><br><span class="line">[master (root-commit) eaadf4e] wrote a readme file</span><br><span class="line"> 1 file changed, 2 insertions(+)</span><br><span class="line"> create mode 100644 readme.txt</span><br></pre></td></tr></table></figure>
+<p>简单解释一下<font color="#FF0000">git commit</font>命令，<font color="#FF0000">-m</font>后面输入的是本次提交的说明，可以输入任意内容，当然最好是有意义的，这样你就能从历史记录里方便地找到改动记录。</p>
+<p>嫌麻烦不想输入<font color="#FF0000">-m “xxx”</font>行不行？确实有办法可以这么干，但是强烈不建议你这么干，因为输入说明对自己对别人阅读都很重要。实在不想输入说明的童鞋请自行Google，我不告诉你这个参数。</p>
+<p><font color="#FF0000">git commit</font>命令执行成功后会告诉你，<font color="#FF0000">1 file changed</font>：1个文件被改动（我们新添加的readme.txt文件）；<font color="#FF0000">2 insertions</font>：插入了两行内容（readme.txt有两行内容）。</p>
+<p>为什么Git添加文件需要add，commit一共两步呢？因为commit可以一次提交很多文件，所以你可以多次add不同的文件，比如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git add file1.txt</span><br><span class="line">$ git add file2.txt file3.txt</span><br><span class="line">$ git commit -m &quot;add 3 files.&quot;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -808,7 +815,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#git的简介"><span class="nav-number">1.</span> <span class="nav-text">git的简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git的安装"><span class="nav-number">2.</span> <span class="nav-text">git的安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建版本库"><span class="nav-number">3.</span> <span class="nav-text">创建版本库</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#git的简介"><span class="nav-number">1.</span> <span class="nav-text">git的简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git的安装"><span class="nav-number">2.</span> <span class="nav-text">git的安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建版本库"><span class="nav-number">3.</span> <span class="nav-text">创建版本库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#所以，创建一个版本库非常简单，首先，选择一个合适的地方，创建一个空目录："><span class="nav-number">3.1.</span> <span class="nav-text">所以，创建一个版本库非常简单，首先，选择一个合适的地方，创建一个空目录：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二步，通过git-init命令把这个目录变成Git可以管理的仓库："><span class="nav-number">3.2.</span> <span class="nav-text">第二步，通过git init命令把这个目录变成Git可以管理的仓库：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#把文件添加到版本库"><span class="nav-number">3.3.</span> <span class="nav-text">把文件添加到版本库</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#用命令git-add告诉Git，把文件添加到仓库："><span class="nav-number">3.3.1.</span> <span class="nav-text">用命令git add告诉Git，把文件添加到仓库：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#用命令git-commit告诉Git，把文件提交到仓库"><span class="nav-number">3.3.2.</span> <span class="nav-text">用命令git commit告诉Git，把文件提交到仓库:</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
