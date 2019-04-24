@@ -6,7 +6,7 @@ categories: Git
 ---
 好早之前学习过git，有些命令不怎么用，已经忘记了，在这里做一个复习，也做个记录。
 
-推荐查看学习廖雪峰的git教程[https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000](https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000)
+推荐查看学习廖雪峰老师的git教程[https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000](https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000)
 
 ## git的简介
 
@@ -106,6 +106,7 @@ $ git add file2.txt file3.txt
 $ git commit -m "add 3 files."
 ```
 ## 时光机穿梭
+
 我们已经成功地添加并提交了一个readme.txt文件，现在，是时候继续工作了，于是，我们继续修改readme.txt文件，改成如下内容：
 ```
 Git is a distributed version control system.
@@ -167,6 +168,7 @@ nothing to commit, working tree clean
 ```
 Git告诉我们当前没有需要提交的修改，而且，工作目录是干净（working tree clean）的。
 ### 版本回退
+
 现在，你已经学会了修改文件，然后把修改提交到Git版本库，现在，再练习一次，修改readme.txt文件如下：
 ```
 Git is a distributed version control system.
@@ -321,6 +323,7 @@ eaadf4e HEAD@{4}: commit (initial): wrote a readme file
 ```
 终于舒了口气，从输出可知，<font color=#FF0000>append GPL</font>的<font color=#FF0000>commit id</font>是<font color=#FF0000>1094adb</font>，现在，你又可以乘坐时光机回到未来了。
 ### 工作区和暂存区
+
 Git和其他版本控制系统如SVN的一个不同之处就是有暂存区的概念。
 
 先来看名词解释。
@@ -405,3 +408,157 @@ nothing to commit, working tree clean
 现在版本库变成了这样，暂存区就没有任何内容了：
 
 ![](https://cdn.liaoxuefeng.com/cdn/files/attachments/0013849077337835a877df2d26742b88dd7f56a6ace3ecf000/0)
+### 撤销修改
+
+自然，你是不会犯错的。不过现在是凌晨两点，你正在赶一份工作报告，你在readme.txt中添加了一行：
+```
+$ cat readme.txt
+Git is a distributed version control system.
+Git is free software distributed under the GPL.
+Git has a mutable index called stage.
+Git tracks changes of files.
+My stupid boss still prefers SVN.
+```
+在你准备提交前，一杯咖啡起了作用，你猛然发现了<font color=#FF0000>stupid boss</font>可能会让你丢掉这个月的奖金！
+
+既然错误发现得很及时，就可以很容易地纠正它。你可以删掉最后一行，手动把文件恢复到上一个版本的状态。如果用<font color=#FF0000>git status</font>查看一下：
+```
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+    modified:   readme.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+```
+你可以发现，Git会告诉你，<font color=#FF0000>git checkout -- file</font>可以丢弃工作区的修改：
+```
+$ git checkout -- readme.txt
+```
+命令<font color=#FF0000>git checkout -- readme.txt</font>意思就是，把readme.txt文件在工作区的修改全部撤销，这里有两种情况：
+
+一种是readme.txt自修改后还没有被放到暂存区，现在，撤销修改就回到和版本库一模一样的状态；
+
+一种是readme.txt已经添加到暂存区后，又作了修改，现在，撤销修改就回到添加到暂存区后的状态。
+
+总之，就是让这个文件回到最近一次<font color=#FF0000>git commit</font>或<font color=#FF0000>git add</font>时的状态。
+
+现在，看看readme.txt的文件内容：
+```
+$ cat readme.txt
+Git is a distributed version control system.
+Git is free software distributed under the GPL.
+Git has a mutable index called stage.
+Git tracks changes of files.
+```
+文件内容果然复原了。
+
+<font color=#FF0000>git checkout -- file</font>命令中的<font color=#FF0000>--</font>很重要，没有--，就变成了“切换到另一个分支”的命令，我们在后面的分支管理中会再次遇到<font color=#FF0000>git checkout</font>命令。
+
+现在假定是凌晨3点，你不但写了一些胡话，还<font color=#FF0000>git add</font>到暂存区了：
+```
+$ cat readme.txt
+Git is a distributed version control system.
+Git is free software distributed under the GPL.
+Git has a mutable index called stage.
+Git tracks changes of files.
+My stupid boss still prefers SVN.
+
+$ git add readme.txt
+```
+
+庆幸的是，在<font color=#FF0000>commit</font>之前，你发现了这个问题。用<font color=#FF0000>git status</font>查看一下，修改只是添加到了暂存区，还没有提交：
+```
+$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+    modified:   readme.txt
+```
+
+Git同样告诉我们，用命令<font color=#FF0000>git reset HEAD <file></font>可以把暂存区的修改撤销掉（unstage），重新放回工作区：
+```
+$ git reset HEAD readme.txt
+Unstaged changes after reset:
+M    readme.txt
+```
+
+<font color=#FF0000>git reset</font>命令既可以回退版本，也可以把暂存区的修改回退到工作区。当我们用HEAD时，表示最新的版本。
+
+再用<font color=#FF0000>git status</font>查看一下，现在暂存区是干净的，工作区有修改：
+```
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+    modified:   readme.txt
+```
+
+还记得如何丢弃工作区的修改吗？
+```
+$ git checkout -- readme.txt
+
+$ git status
+On branch master
+nothing to commit, working tree clean
+```
+
+整个世界终于清静了！
+### 删除文件
+
+在Git中，删除也是一个修改操作，我们实战一下，先添加一个新文件test.txt到Git并且提交：
+```
+$ git add test.txt
+
+$ git commit -m "add test.txt"
+[master b84166e] add test.txt
+ 1 file changed, 1 insertion(+)
+ create mode 100644 test.txt
+```
+
+一般情况下，你通常直接在文件管理器中把没用的文件删了，或者用rm命令删了：
+```
+$ rm test.txt
+```
+
+这个时候，Git知道你删除了文件，因此，工作区和版本库就不一致了，git status命令会立刻告诉你哪些文件被删除了：
+```
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+    deleted:    test.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+```
+
+现在你有两个选择，一是确实要从版本库中删除该文件，那就用命令<font color=#FF0000>git rm</font>删掉，并且<font color=#FF0000>git commit</font>：
+```
+$ git rm test.txt
+rm 'test.txt'
+
+$ git commit -m "remove test.txt"
+[master d46f35e] remove test.txt
+ 1 file changed, 1 deletion(-)
+ delete mode 100644 test.txt
+```
+
+现在，文件就从版本库中被删除了。
+
+<font color=#FF0000>小提示：先手动删除文件，然后使用git rm <file>和git add<file>效果是一样的。</font>
+
+另一种情况是删错了，因为版本库里还有呢，所以可以很轻松地把误删的文件恢复到最新版本：
+```
+$ git checkout -- test.txt
+```
+<font color=#FF0000>git checkout</font>其实是用版本库里的版本替换工作区的版本，无论工作区是修改还是删除，都可以“一键还原”。
+小结
+
+命令<font color=#FF0000>git rm</font>用于删除一个文件。如果一个文件已经被提交到版本库，那么你永远不用担心误删，但是要小心，你只能恢复文件到最新版本，你会丢失最近一次提交后你修改的内容。
